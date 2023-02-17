@@ -5,21 +5,25 @@
 <head>
         <title>NoMoreLife</title>
 
-        <meta charset = "utf-8">
-		<link rel = "shortcut icon" type = "image/x-icon" href="Logo.ico" />
+        <meta charset="utf-8">
+		<link rel="shortcut icon" type="image/x-icon" href="Logo.ico" />
 
-		<meta name = "author" content = "" />
-		<meta name = "description" content = "" />
-		<meta name = "keywords" content = "" />
+		<meta name="author" content="NoMoreLife" />
+		<meta name="description" content="NoMoreLife" />
+		<meta name="keywords" content="NoMoreLife, nomorelife, nomorelife Script, script, lua, Executor" />
 
-		<meta property = "og:title" content = "NoMoreLife" />
-		<meta property = "og:description" content = "Official website for NoMoreLife" />
-		<meta property = "og:type" content = "website" />
-		<meta property = "og:url" content = "https://cdn.discordapp.com/attachments/1065258248866889738/1075632215360282725/3a458f2d2630fdbb6b435c75b464dab5.png" />
-		<meta property = "og:secure_url" content = "https://cdn.discordapp.com/attachments/1065258248866889738/1075632215360282725/3a458f2d2630fdbb6b435c75b464dab5.png">
-		<meta property = "og:image" content = "https://cdn.discordapp.com/attachments/1065258248866889738/1075632215360282725/3a458f2d2630fdbb6b435c75b464dab5.png" />
+		<meta property="og:title" content="NoMoreLife" />
+		<meta property="og:description" content="Official website for NoMoreLife" />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://cdn.discordapp.com/attachments/1065258248866889738/1075632215360282725/3a458f2d2630fdbb6b435c75b464dab5.png" />
+		<meta property="og:secure_url" content="https://cdn.discordapp.com/attachments/1065258248866889738/1075632215360282725/3a458f2d2630fdbb6b435c75b464dab5.png">
+		<meta property="og:image" content="https://cdn.discordapp.com/attachments/1065258248866889738/1075632215360282725/3a458f2d2630fdbb6b435c75b464dab5.png" />
 
         <style>
+            *{
+                padding: 0;
+                margin: 0;
+            }
             body {
 				background-color: rgb(25, 25, 25);
                 color: white;
@@ -29,7 +33,34 @@
 				background-size: cover;
 				background-repeat: no-repeat;
 			}
+                #ggg{
+                    transition: 0.7s;
+                    opacity: 1;
+                    display: none;
+                }
+            .background{
+                background-color: rgb(45, 45, 45);
+                height: 100vh;
+               width: 100%;
+               padding: 0;
+               margin: 0;
+               position: absolute;
+               background-size: cover;
+               overflow: hidden;
+              
+            }
+            #fg{
+                margin-top: 300px;
+                opacity: 0;
+                transition: 0.8s;
+                display: flex;
+  justify-content: center;
+  align-items: center;
+                
 
+                
+                
+            }
             body::-webkit-scrollbar {
                 width: 12px;
             }
@@ -92,6 +123,7 @@
                 margin-top: 45px;
                 border: 1px solid rgb(153, 95, 39);
                 width: 500px;
+
                 height: 0px;
             }
 
@@ -101,8 +133,17 @@
         </style>
     </head>
     <body>
-        <input type="text" value="Copied to clipboard!" readonly id="copyPopup">
-        <center>
+        <div id="ggg">
+                
+            <div class="background"><h1  id="fg">NoMoreLife</h1></div>
+       </div>
+  <center>
+            <div id="ggg">
+                
+                 <div class="background"><h1  id="fg">NoMoreLife</h1></div>
+            </div>
+            <input type="text" value="Copied to clipboard!" readonly id="copyPopup">
+        
             <br>
             <button id="scriptBtn"><span style="color: rgb(78, 153, 204);">loadstring</span>(game:<span style="color: rgb(78, 153, 204);">HttpGet</span>(<span style="color: rgb(80, 179, 179);">"</span><span style="color: rgb(149, 199, 144);">https://raw.githubusercontent.com/yousif111/All-Script/main/Script3</span><span style="color: rgb(80, 179, 179);">"</span>))();</button>
             <br>
@@ -128,7 +169,26 @@
         </center>
 
         <script type="text/javascript">
-            const scriptBtn = document.getElementById("scriptBtn");
+            const hgg = document.getElementById("ggg")
+            const fg = document.getElementById("fg")
+          window.onload = function(){
+             hgg.style.display = "block"
+             setTimeout( function(){
+         fg.style.opacity = 1;
+
+}, 1000)
+setTimeout( function(){
+         fg.style.opacity = 0;
+         hgg.style.opacity = 0
+}, 4000)
+setTimeout( function(){
+    hgg.style.display = "none"
+}, 5000)
+
+
+          }
+
+const scriptBtn = document.getElementById("scriptBtn");
             const copyPopup = document.getElementById("copyPopup");
             const gamesBtn = document.getElementById("gamesBtn");
             const discordBtn = document.getElementById("discordBtn");
