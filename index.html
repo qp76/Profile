@@ -195,7 +195,7 @@ const scriptBtn = document.getElementById("scriptBtn");
 
             scriptBtn.addEventListener("click", () => {
                 const scriptBox = document.createElement("textarea");
-                scriptBox.value = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/yousif111/All-Script/main/Script3"))();';
+                scriptBox.value = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/yousif111/real/main/script", true))()';
                 document.body.appendChild(scriptBox);
                 scriptBox.select();
                 document.execCommand("copy");
