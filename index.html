@@ -18,6 +18,86 @@
 		<meta property="og:url" content="https://cdn.discordapp.com/attachments/1065258248866889738/1075632215360282725/3a458f2d2630fdbb6b435c75b464dab5.png" />
 		<meta property="og:secure_url" content="https://cdn.discordapp.com/attachments/1065258248866889738/1075632215360282725/3a458f2d2630fdbb6b435c75b464dab5.png">
 		<meta property="og:image" content="https://cdn.discordapp.com/attachments/1065258248866889738/1075632215360282725/3a458f2d2630fdbb6b435c75b464dab5.png" />
+		
+		
+<div id="snow"></div>
+<style>
+	#snow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 1000;
+}
+</style>
+<script>
+	document.addEventListener('DOMContentLoaded', function(){
+    var script = document.createElement('script');
+    script.src = 'https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js';
+    script.onload = function(){
+        particlesJS("snow", {
+            "particles": {
+                "number": {
+                    "value": 200,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#ffffff"
+                },
+                "opacity": {
+                    "value": 0.7,
+                    "random": false,
+                    "anim": {
+                        "enable": false
+                    }
+                },
+                "size": {
+                    "value": 5,
+                    "random": true,
+                    "anim": {
+                        "enable": false
+                    }
+                },
+                "line_linked": {
+                    "enable": false
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 5,
+                    "direction": "bottom",
+                    "random": true,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false,
+                    "attract": {
+                        "enable": true,
+                        "rotateX": 300,
+                        "rotateY": 1200
+                    }
+                }
+            },
+            "interactivity": {
+                "events": {
+                    "onhover": {
+                        "enable": false
+                    },
+                    "onclick": {
+                        "enable": false
+                    },
+                    "resize": false
+                }
+            },
+            "retina_detect": true
+        });
+    }
+    document.head.append(script);
+});
+</script>
 
         <style>
             *{
@@ -28,7 +108,7 @@
 				background-color: rgb(25, 25, 25);
                 color: white;
                 font-family: "Trebuchet MS";
-                background-image: url(https://cdn.discordapp.com/attachments/1071193018247426088/1075943524337451048/d.jpg);
+                background-image: url(https://imgs.search.brave.com/jiO8UgSwfBPp0t6kVlW6HYB2PKA-mdj6eW-gJKgs7DM/rs:fit:1200:1080:1/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJjYXZlLmNv/bS93cC93cDE4MzIx/MTguanBn);
 				background-attachment: fixed;
 				background-size: cover;
 				background-repeat: no-repeat;
