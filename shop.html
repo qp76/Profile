@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Shop</title>
+  <div class="animated-background"></div>
+  <link rel="stylesheet" href="shop.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1 class="logo">My Shop By NoMoreLife</h1>
+      <i id="cart-icon" class="fa fa-shopping-cart"></i>
+    </div>
+  </header>
+  
+<section class="products">
+  <div class="container">
+    <div class="product">
+      <img src="https://cdn.discordapp.com/attachments/1124240570982867056/1124905563055210597/274077520_524080492666322_1930234432511673557_n.jpg" alt="Product 1">
+      <h3>الشرموطه الاولي</h3>
+	        <h3>هيا هيا نفس البت ال 4 بس داخله بنفرين</h3>
+      <p>$10</p>
+      <button class="add-to-cart">Add to Cart</button>
+    </div>
+    <div class="product">
+      <img src="https://cdn.discordapp.com/attachments/932973493501456415/1126301724857081876/20201110210556_2.png" alt="Product 2">
+      <h3>الشرموطه الثانيه</h3>
+	        <h3> الخبرات: من المعادي شرموطه كسها لونو بينك وصوتها جامد</h3>
+      <p>$15</p>
+      <button class="add-to-cart">Add to Cart</button>
+    </div>
+    <div class="product">
+      <img src="https://scontent.fcai19-3.fna.fbcdn.net/v/t39.30808-6/357507050_2157670704622428_6085591642441941290_n.jpg?_nc_cat=110&cb=99be929b-3346023f&ccb=1-7&_nc_sid=174925&_nc_eui2=AeHjvjaabZ79kEXRRkB4V3uVNJzbN-GNGi80nNs34Y0aLzYwk0Edfwb5fBhchG19w0SpfkXviHLe54OFkxp9FoHa&_nc_ohc=-3yClkG0sjMAX_tk6dj&_nc_oc=AQn0fnfVG_8k10BooBk96O1bydghJHUAtpSHR60W-IJAIu0gl_jz4s0B3RuhLzzB3W4&_nc_ht=scontent.fcai19-3.fna&oh=00_AfAdpnkfui1ypKlr7epLvAkDS230Zq6QmGCD50lcqK3Uhg&oe=64AA8A4A" alt="Product 3">
+      <h3>الشرموطه الثالثه</h3>
+	        <h3>الخبرات: قبيحه بنت المتناكه وبوقها بيكون فيه موس وممكن يعور بتاعك</h3>
+      <p>$20</p>
+      <button class="add-to-cart">Add to Cart</button>
+    </div>
+    <div class="product">
+      <img src="https://cdn.discordapp.com/attachments/1124240570982867056/1124905590267838574/283974326_598008818606822_8728092629291410749_n.jpg" alt="Product 4">
+      <h3>الشرموطه الرابعه</h3>
+	  <h3>الخبرات: خبره في كل حاجه وبتعرف تعمل بلو جوب وجسمها جامد وبتعمل بلو جوب وانتا مطمن مش هتقطعلك بتاعك متخافش</h3>
+      <p>$12</p>
+      <button class="add-to-cart">Add to Cart</button>
+    </div>
+  </div>
+</section>
+
+  
+  <div class="cart">
+    <div class="container">
+      <h2 class="cart-text">Cart</h2>
+      <div id="mycart" class="cart-items"></div>
+      <div class="total">
+        <span class="total-title">Total:</span>
+        <span class="total-price">$0</span>
+      </div>
+<a href="https://discord.com/users/217278908389785604" target="_blank">
+  <button id="close-cart" class="close-cart">للشراء توجه الى ديسكورد nomorelife_</button>
+</a>
+    </div>
+  </div>
+  
+  <script>
+    let cartIcon = document.querySelector("#cart-icon");
+    let cart = document.querySelector(".cart");
+    let closeCart = document.querySelector("#close-cart");
+    let cartText = document.querySelector(".cart-text");
+    let myCart = document.querySelector("#mycart");
+
+    cartIcon.onclick = function() {
+      cart.classList.add("active");
+      cartText.innerText = "Your Cart";
+      showBlackShop();
+    };
+
+    closeCart.onclick = () => {
+      cart.classList.remove("active");
+    };
+
+    function ready() {
+      var addToCartButtons = document.getElementsByClassName("add-to-cart");
+      for (var i = 0; i < addToCartButtons.length; i++) {
+        var button = addToCartButtons[i];
+        button.addEventListener("click", addCartClicked);
+      }
+    }
+
+    function addCartClicked(event) {
+      var button = event.target;
+      var product = button.parentElement;
+      var title = product.querySelector("h3").innerText;
+      var price = product.querySelector("p").innerText;
+      var imageSrc = product.querySelector("img").src;
+      addItemToCart(title, price, imageSrc);
+      updateTotal();
+    }
+
+    function addItemToCart(title, price, imageSrc) {
+      var cartItem = document.createElement("div");
+      cartItem.classList.add("cart-box");
+      var cartContent = `
+        <img class="cart-image" src="${imageSrc}" alt="${title}">
+        <div class="cart-details">
+          <h3 class="cart-title">${title}</h3>
+          <p class="cart-price">${price}</p>
+        </div>
+        <input class="cart-quantity" type="number" value="1">
+        <button class="cart-remove">Remove</button>
+      `;
+      cartItem.innerHTML = cartContent;
+      myCart.appendChild(cartItem);
+      cartItem.querySelector(".cart-remove").addEventListener("click", removeCartItem);
+      cartItem.querySelector(".cart-quantity").addEventListener("change", quantityChanged);
+    }
+
+    function removeCartItem(event) {
+      var buttonClicked = event.target;
+      buttonClicked.parentElement.remove();
+      updateTotal();
+    }
+
+    function quantityChanged(event) {
+      var input = event.target;
+      if (isNaN(input.value) || input.value <= 0) {
+        input.value = 1;
+      }
+      updateTotal();
+    }
+
+    function updateTotal() {
+      var cartBoxes = document.getElementsByClassName("cart-box");
+      var total = 0;
+      for (var i = 0; i < cartBoxes.length; i++) {
+        var cartBox = cartBoxes[i];
+        var priceElement = cartBox.querySelector(".cart-price");
+        var quantityElement = cartBox.querySelector(".cart-quantity");
+        var price = parseFloat(priceElement.innerText.replace("$", ""));
+        var quantity = quantityElement.value;
+        total += price * quantity;
+      }
+      total = Math.round(total * 100) / 100;
+      document.querySelector(".total-price").innerText = "$" + total;
+    }
+
+    function showBlackShop() {
+      var blackShop = document.querySelector("#black-shop");
+      blackShop.style.display = "block";
+      var cartItems = document.querySelectorAll(".cart-box");
+      cartItems.forEach((item) => {
+        myCart.appendChild(item);
+      });
+    }
+
+    ready();
+  </script>
+</body>
+</html>
