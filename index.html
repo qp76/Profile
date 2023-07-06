@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>انا فاضي مش لاقي حاجه اعملها</title>
+  <title>انا فاضي مش لاقي حاجه اعملها By nomorelife_</title>
   <link rel="stylesheet" href="shop.css">
   <style>
     .container {
@@ -51,13 +51,21 @@
 <body>
   <div class="container">
     <h1>انا فاضي مش لاقي حاجه اعملها By nomorelife_</h1>
+	    <h1>فيه جلتش في الموقع بيخلي الرقم لا نهائي لو اكتشفو ابعتلي ديسكورد هديلك هديه </h1>
     <div class="number" id="numberDisplay">0</div>
     <button class="button" onclick="decreaseNumber()">تنقيص</button>
     <button class="button" onclick="increaseNumber()">زيادة</button>
+	
+	<a href="https://discord.com/users/217278908389785604" target="_blank">
+  <button id="close-cart" class="close-cart">اضغط هنا للتواصل معايا</button>
+</a>
+	
   </div>
 
   <script>
     var number = 0;
+    var increaseInterval;
+    var increaseSpeed = 200; // تحديد سرعة الزيادة بالميلي ثانية
 
     function updateNumberDisplay() {
       var numberDisplay = document.getElementById("numberDisplay");
@@ -84,6 +92,18 @@
         button.classList.remove("animate-button");
       }, 500);
     }
+
+    document.addEventListener("keydown", function(event) {
+      if (event.key === "1") {
+        increaseInterval = setInterval(increaseNumber, increaseSpeed);
+      }
+    });
+
+    document.addEventListener("keyup", function(event) {
+      if (event.key === "1") {
+        clearInterval(increaseInterval);
+      }
+    });
   </script>
 </body>
 </html>
