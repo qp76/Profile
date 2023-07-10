@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>اله حاسبه</title>
+    <div class="animated-background"></div>
+	 <h1>لازم تبقا فاهم اني وانا بعمل الموقع ده كنت في قمه غضبي</h1>
+	 <a href="https://discord.com/users/217278908389785604" target="_blank">
+  <button id="close-cart" class="close-cart">للتواصل اضغط علي الزر By nomorelife_</button>
+</a>
+    <link rel="stylesheet" href="shop.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+	
+	
+
+    .calculator {
+      width: 400px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 10px;
+    }
+
+    .calculator-screen {
+      grid-column: span 4;
+      height: 60px;
+      text-align: right;
+      padding: 10px;
+      font-size: 24px;
+      border: none;
+      border-radius: 5px;
+      background-color: #f3f3f3;
+    }
+
+    .calculator-button {
+      height: 50px;
+      font-size: 20px;
+      border: none;
+      border-radius: 5px;
+      background-color: #e0e0e0;
+      cursor: pointer;
+    }
+
+    .calculator-button:hover {
+      background-color: #d3d3d3;
+    }
+
+    .calculator-button.operator {
+      background-color: #ff9800;
+      color: #fff;
+    }
+
+    .calculator-button.operator:hover {
+      background-color: #fb8c00;
+    }
+
+    .calculator-button.equal {
+      background-color: #607d8b;
+      color: #fff;
+    }
+
+    .calculator-button.equal:hover {
+      background-color: #455a64;
+    }
+
+    .calculator-button.clear {
+      background-color: #f44336;
+      color: #fff;
+    }
+
+    .calculator-button.clear:hover {
+      background-color: #ba0e0e;
+    }
+
+    #theme-toggle {
+      display: none;
+    }
+
+    #theme-toggle + label {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    #theme-toggle + label:before {
+      content: "تفعيل الوضع الداكن";
+    }
+
+    #theme-toggle:checked + label:before {
+      content: "تفعيل الوضع الطبيعي";
+    }
+
+    #theme-toggle:checked ~ .calculator {
+      background-color: #333;
+    }
+
+    #theme-toggle:checked ~ .calculator .calculator-screen {
+      background-color: #222;
+      color: #fff;
+    }
+
+    #theme-toggle:checked ~ .calculator .calculator-button {
+      background-color: #444;
+      color: #fff;
+    }
+
+    #theme-toggle:checked ~ .calculator .calculator-button.operator {
+      background-color: #ff9800;
+    }
+
+    #theme-toggle:checked ~ .calculator .calculator-button.equal {
+      background-color: #607d8b;
+    }
+
+    #theme-toggle:checked ~ .calculator .calculator-button.clear {
+      background-color: #f44336;
+    }
+  </style>
+</head>
+<body>
+  <input type="checkbox" id="theme-toggle">
+  <label for="theme-toggle"></label>
+
+  <div class="calculator">
+    <input type="text" id="calculator-screen" class="calculator-screen" readonly>
+    <input type="button" value="7" class="calculator-button" onclick="appendToScreen('7')">
+    <input type="button" value="8" class="calculator-button" onclick="appendToScreen('8')">
+    <input type="button" value="9" class="calculator-button" onclick="appendToScreen('9')">
+    <input type="button" value="➗" class="calculator-button operator" onclick="appendToScreen('/')">
+    <input type="button" value="4" class="calculator-button" onclick="appendToScreen('4')">
+    <input type="button" value="5" class="calculator-button" onclick="appendToScreen('5')">
+    <input type="button" value="6" class="calculator-button" onclick="appendToScreen('6')">
+    <input type="button" value="✖️" class="calculator-button operator" onclick="appendToScreen('*')">
+    <input type="button" value="1" class="calculator-button" onclick="appendToScreen('1')">
+    <input type="button" value="2" class="calculator-button" onclick="appendToScreen('2')">
+    <input type="button" value="3" class="calculator-button" onclick="appendToScreen('3')">
+    <input type="button" value="➖" class="calculator-button operator" onclick="appendToScreen('-')">
+    <input type="button" value="0" class="calculator-button" onclick="appendToScreen('0')">
+    <input type="button" value="." class="calculator-button" onclick="appendToScreen('.')">
+    <input type="button" value="=" class="calculator-button equal" onclick="calculateResult()">
+    <input type="button" value="➕" class="calculator-button operator" onclick="appendToScreen('+')">
+    <input type="button" value="𝓒" class="calculator-button clear" onclick="clearScreen()">
+    <input type="button" value="%" class="calculator-button operator" onclick="appendToScreen('%')">
+  </div>
+
+
+  <script>
+    function appendToScreen(value) {
+      var screen = document.getElementById('calculator-screen');
+      screen.value += value;
+    }
+
+    function calculateResult() {
+      var screen = document.getElementById('calculator-screen');
+      var result = eval(screen.value);
+      screen.value = result;
+    }
+
+    function clearScreen() {
+      var screen = document.getElementById('calculator-screen');
+      screen.value = '';
+    }
+	
+  </script>
+</body>
+</html>
