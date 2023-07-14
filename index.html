@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>NoMoreLife</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/all.min.css'>
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Montserrat&amp;display=swap"rel="stylesheet'><link rel="stylesheet" href="./style.css">
+  <style>
+    .music-button {
+      width: 50px;
+      height: 50px;
+    }
+  </style>
+  
+  </head>
+<body>
+  <button id="playButton" class="music-button" onclick="handleIconClick()">
+    <img id="playIcon" src="https://img.icons8.com/fluency/48/apple-music.png" alt="رابط"> 
+  </button>
+
+</head>
+<body>
+
+<main>
+	
+<button data-link="https://open.spotify.com/user/31dliwtzb3wu5oitxbrvkzoutkea">
+  <i class="fab fa-spotify"></i>
+</button>
+
+<button data-link="https://www.tiktok.com/@nomorelife64">
+  <img src="https://img.icons8.com/ios/50/tiktok--v1.png" alt="لوجو TikTok" style="width: 30px; height: 30px;">
+</button>
+
+<button data-link="https://github.com/yousif111">
+  <i class="fab fa-github"></i>
+</button>
+	
+	<button data-link="https://www.youtube.com/@nomorelife6932/videos">
+		<ion-icon name="logo-youtube"></ion-icon>
+	</button>
+	
+<button data-link="https://discord.com/users/217278908389785604">
+  <i class="fab fa-discord"></i>
+</button>
+
+
+
+
+</main>
+
+
+<div class="cursor cursor--large"></div>
+<div class="cursor cursor--small"></div>
+  <script>
+    var playIcon = document.getElementById("playIcon");
+    var isPlaying = false;
+
+    function handleIconClick() {
+      if (isPlaying) {
+        // قم بتغيير الأيقونة إلى الأيقونة الأولى
+        playIcon.src = "https://img.icons8.com/fluency/48/apple-music.png";
+        isPlaying = false;
+      } else {
+        // قم بتغيير الأيقونة إلى الأيقونة الثانية
+        playIcon.src = "https://img.icons8.com/fluency/48/stop-circled.png";
+        isPlaying = true;
+      }
+    }
+  </script>
+</body>
+</html>
+
+<audio id="music" src="https://cdn.discordapp.com/attachments/1120723640208605246/1129325959196196934/CfxJqMBbo_U_160.mp3"></audio>
+
+
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.1.1/gsap.min.js'></script>
+<script src='https://unpkg.com/ionicons@5.0.0/dist/ionicons.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
