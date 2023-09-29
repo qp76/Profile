@@ -9,22 +9,22 @@
         bottom: 20px;
         right: 20px;
         padding: 10px 20px;
-        background-color: #f00; /* لون الخلفية */
-        color: #fff; /* لون النص */
+        background-color: #f00; 
+        color: #fff; 
         border: none;
         border-radius: 5px;
         font-size: 16px;
         cursor: pointer;
     }
 
-    /* إذا أردت تغيير الأنماط عند تحويل المؤشر فوق الزر، يمكنك إضافة الأنماط التالية */
+
     .bottom-right-button:hover {
-        background-color: #ff5555; /* لون الخلفية عند تحويل المؤشر فوقه */
+        background-color: #ff5555; 
     }
 
-    /* يمكنك أيضًا تغيير الأنماط عند الضغط على الزر */
+
     .bottom-right-button:active {
-        background-color: #cc0000; /* لون الخلفية عند الضغط عليه */
+        background-color: #cc0000; 
     }
 
 body {
@@ -127,3 +127,10 @@ main:hover button:hover {
 .support a:hover {
   transform: scale(1.1);
 }
+
+        a {
+            position: absolute;
+            top: 10px; 
+            left: 10px; 
+            text-decoration: none;
+        }
