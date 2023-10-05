@@ -52,6 +52,11 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
+        function playAudio() {
+            var audioPlayer = document.getElementById("audioPlayer");
+            audioPlayer.play();
+        }
+
 var playButton = document.getElementById("playButton");
 var playIcon = document.getElementById("playIcon");
 var audio = document.getElementById("music");
