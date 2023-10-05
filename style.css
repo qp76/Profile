@@ -20,7 +20,7 @@
 #clock-container {
     text-align: center; 
     position: fixed;
-    bottom: 54vh; /* استخدم وحدة vh لتحديد ارتفاع ثابت بنسبة إلى ارتفاع النافذة */
+    bottom: 54vh;
     left: 50%;
     transform: translateX(-50%); 
     background-color: transparent; 
