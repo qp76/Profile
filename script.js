@@ -143,7 +143,7 @@ document.addEventListener("DOMContentLoaded", function () {
     buttonStart.addEventListener("click", function () {
         if (music.paused) {
             music.play();
-            playButton.innerHTML = "مع القضية الفلسطينية";
+            playButton.innerHTML = "";
             kissMyAss.style.opacity = '0';
             setTimeout(() => {
                 kissMyAss.style.display = 'none';
